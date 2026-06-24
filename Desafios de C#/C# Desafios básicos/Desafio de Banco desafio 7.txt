@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+class Conta{
+private int _saldo;
+public string titular;
+public int saldo{get{return _saldo;} set{_saldo = value>=0 ? value : 0;}} 
+public Conta(string N){
+titular = N;
+}
+public void depositar(int V){
+if(V>0){
+saldo += V;
+
+} else{
+Console.WriteLine("Erro na transição, números negativos");
+}
+}
+public void sacar(int V){
+
+if (V < 0)
+{
+    Console.WriteLine("Erro no saldo: Pedindo números negativos");
+}
+else if (saldo-V < 0)
+{
+    Console.WriteLine("Erro no saldo: sem dinheiro o suficiente para sacar");
+} 
+else
+{
+    Console.WriteLine("Deu tudo certo");
+    saldo -= V;
+}
+}
+}
+class Princip{
+static void Main(string[] args){
+List<Conta> Banco = new List<Conta>();
+Conta A = new Conta("NVIDIA");
+Conta B = new Conta("ASUS");
+Conta C = new Conta("Nubank");
+A.depositar(200000);
+B.depositar(-200);
+C.depositar(12334);
+Banco.Add(A);
+Banco.Add(B);
+Banco.Add(C);
+foreach(Conta conta in Banco){
+    Console.WriteLine($"{conta.titular} | {conta. saldo}");
+}
+}
+}

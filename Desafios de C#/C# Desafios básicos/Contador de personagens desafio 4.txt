@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+public class Personagem{
+    private int _dificuldade;
+    public string nome;
+    public int dificuldade{
+    get{return _dificuldade;}
+    set{if(value >=1 && value <=10){_dificuldade = value;}else{_dificuldade = 1;}} //Bug
+    }
+    public Personagem(string N, int I){
+        dificuldade = I;
+        nome = N;
+    }
+}
+
+public class Princip{
+static void Main(string[] args){
+List<Personagem> escolha = new List<Personagem>();
+escolha.Add(new Personagem("Mago", 7));
+escolha.Add(new Personagem("Guerreiro", 1));
+escolha.Add(new Personagem("Druída", 9));
+escolha.Add(new Personagem("Ladino", 10));
+escolha.Add(new Personagem("Paladino", 4));
+foreach(Personagem Heroi in escolha){
+Console.WriteLine($"{Heroi.nome} - {Heroi.dificuldade}");
+}
+}
+}

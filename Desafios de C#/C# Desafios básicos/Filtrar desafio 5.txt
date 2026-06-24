@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+public class Personagem{
+    private int _nivel;
+    public string nome;
+    public int nivel{
+    get{return _nivel;}
+    set{if(value >=1 && value <=100){_nivel = value;}else{_nivel = -1;}} //Bug
+    }
+    public Personagem(string N, int I){
+        nivel = I;
+        nome = N;
+    }
+}
+public class Princip{
+static void Main(string[] args){
+List<Personagem> escolha = new List<Personagem>();
+escolha.Add(new Personagem("Dragao", 100));
+escolha.Add(new Personagem("Goblin", 5));
+escolha.Add(new Personagem("Bug", -999));
+escolha.Add(new Personagem("Maldição escandalosa", 1));
+escolha.Add(new Personagem("?", 0));
+foreach(Personagem item in escolha){
+if(item.nivel >=50){
+Console.WriteLine(item.nome + "\n");
+}
+}
+}
+}

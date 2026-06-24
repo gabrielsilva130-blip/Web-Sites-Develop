@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+class Item{
+public int valor;
+public string nome;
+public Item(int V, string N){
+valor = V;
+nome = N;
+}
+}
+class Princip{
+static void Main(string[] args){
+List<Item> inventario = new List<Item>();
+inventario.Add(new Item(100,"Espada"));
+inventario.Add(new Item(50,"Poção"));
+inventario.Add(new Item(200,"Arco"));
+inventario.Add(new Item(-100,"Maldição"));
+inventario.Add(new Item(2,"Um Rato"));
+foreach(Item item in inventario){
+Console.WriteLine($"{item.nome} - {item.valor}");
+}
+}
+}

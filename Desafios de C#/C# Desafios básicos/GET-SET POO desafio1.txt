@@ -1,0 +1,24 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+public class Personagem{
+    private int _idade;
+    public string nome;
+    public int idade{
+    get{return _idade;}
+    set{if(value >=1 && value <=100){_idade = value;}else{_idade = 1;}} //Bug
+    }
+    public Personagem(string N, int I){
+        idade = I;
+        nome = N;
+    }
+} 
+public class Princip
+{
+    public static void Main(string[] args)
+    {
+        Personagem p = new Personagem("Yashin", -50);
+        Console.WriteLine ($" {p.idade}, {p.nome} ");
+    }
+}

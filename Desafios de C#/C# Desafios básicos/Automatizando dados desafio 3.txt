@@ -1,0 +1,24 @@
+using System;
+public class Personagem{
+    private int _vida;
+    public string nome;
+    public int vida{
+    get{return _vida;}
+    set{if(value >=0 && value <=100){_idade = value;}else{_idade = -1;}} //Morte
+    }
+    public Personagem(string V, int I){
+        idade = I;
+        vida = V;
+    }
+} 
+public class Princip
+{
+    public static void Main(string[] args)
+    {
+        Personagem p = new Personagem("Yashin", -50);
+	p.vida = 23;
+        Console.WriteLine ($" {p.idade}, {p.nome} ");
+	p.vida = -23;
+        Console.WriteLine ($" {p.idade}, {p.nome} ");
+    }
+}

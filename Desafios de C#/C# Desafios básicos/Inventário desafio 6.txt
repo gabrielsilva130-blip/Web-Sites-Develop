@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+public class Item{
+public string nome;
+private int _valor;
+private int _quantidade;
+public int valor{get{return _valor;} set{if(value <0){ _valor = 0;} else{ _valor = value;}}}
+
+public int quantidade{get{return _quantidade;} set{if(value <0){ _quantidade = 0;} else{ _quantidade = value;}}}
+public Item(string N, int V, int Q){ nome = N; valor = V; quantidade = Q;}
+}
+class princip{
+static void Main(string[] args){
+List<Item> inventario = new List<Item>();
+inventario.Add(new Item("picareta",200,5));
+inventario.Add(new Item("espada enferrujada", -1, 90));
+inventario.Add(new Item("espada afiada", 2000,1));
+inventario.Add(new Item("batata", 99999, 20));
+int Total = 0;
+foreach(Item itemI in inventario){
+Console.WriteLine($"{itemI.nome} | {itemI.valor} | {itemI.quantidade}");
+Total += itemI.quantidade * itemI.valor;
+}
+Console.WriteLine(Total);
+}
+}
